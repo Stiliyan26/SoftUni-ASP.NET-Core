@@ -1,0 +1,13 @@
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\bin\Debug\net6.0\WebShopDemo.Core.deps.json
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\bin\Debug\net6.0\WebShopDemo.Core.dll
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\bin\Debug\net6.0\WebShopDemo.Core.pdb
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.csproj.AssemblyReference.cache
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.AssemblyInfoInputs.cache
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.AssemblyInfo.cs
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.csproj.CoreCompileInputs.cache
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.dll
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\refint\WebShopDemo.Core.dll
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.pdb
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\ref\WebShopDemo.Core.dll
+C:\Users\Stili\source\repos\WebShopDemo\WebShopDemo.Core\bin\Debug\net6.0\Data\products.json
