@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using WebShopDemo.Core.Data.Models;
 
 namespace WebShopDemo.Data
 {
@@ -9,5 +10,12 @@ namespace WebShopDemo.Data
             : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public DbSet<Product> Products { get; set; }
     }
 }

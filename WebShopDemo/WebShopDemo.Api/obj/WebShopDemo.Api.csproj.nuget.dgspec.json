@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Api\\WebShopDemo.Api.csproj": {}
+    "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Api\\WebShopDemo.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Api\\WebShopDemo.Api.csproj": {
+    "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Api\\WebShopDemo.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Api\\WebShopDemo.Api.csproj",
+        "projectUniqueName": "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Api\\WebShopDemo.Api.csproj",
         "projectName": "WebShopDemo.Api",
-        "projectPath": "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Api\\WebShopDemo.Api.csproj",
+        "projectPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Api\\WebShopDemo.Api.csproj",
         "packagesPath": "C:\\Users\\Stili\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Api\\obj\\",
+        "outputPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Stili\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj": {
-                "projectPath": "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj"
+              "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj": {
+                "projectPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj": {
+    "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj",
+        "projectUniqueName": "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj",
         "projectName": "WebShopDemo.Core",
-        "projectPath": "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj",
+        "projectPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj",
         "packagesPath": "C:\\Users\\Stili\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo.Core\\obj\\",
+        "outputPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Stili\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -108,6 +108,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.11, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[6.0.1, )"

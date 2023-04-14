@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B7ZvHJFthE8L1yGGaZaFcESBT11r/ElaXjVXEREIIqredIk/a4KTOkIlM3CQxPVj4DEbtkU2/A2uv++Er5457w==",
+  "dgSpecHash": "vkDX9lRc7z+hLPLCy12f2N6/txyX99McuCoi56uy3kcxAfcG56XIBNTX7M5NFscT8L2TkLzSJ3nEj8nLPaEYpg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Stili\\source\\repos\\WebShopDemo\\WebShopDemo\\WebShopDemo.csproj",
+  "projectFilePath": "C:\\GitHub\\Softuni-ASP.NET-Core\\WebShopDemo\\WebShopDemo\\WebShopDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Stili\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Stili\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
