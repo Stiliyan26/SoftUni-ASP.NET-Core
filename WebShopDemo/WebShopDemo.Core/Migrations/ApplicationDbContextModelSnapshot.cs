@@ -231,6 +231,10 @@ namespace WebShopDemo.Core.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasComment("Primary key");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit")
+                        .HasComment("Product is available");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)

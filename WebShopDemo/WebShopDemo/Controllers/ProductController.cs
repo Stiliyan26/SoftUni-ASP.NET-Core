@@ -50,5 +50,13 @@ namespace WebShopDemo.Controllers
 
             return RedirectToAction(nameof(Index));   
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await productService.Delete(id);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
