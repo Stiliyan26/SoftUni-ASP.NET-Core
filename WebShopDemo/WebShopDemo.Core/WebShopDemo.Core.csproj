@@ -23,4 +23,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Models\Accounts\" />
+  </ItemGroup>
+
 </Project>
