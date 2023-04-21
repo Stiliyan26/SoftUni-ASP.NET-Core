@@ -9,8 +9,7 @@ namespace WebShopDemo.Controllers
     /// Web shop products
     /// </summary>
     /// <returns></returns>
-    [Authorize]
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         private readonly IProductService productService;
         public ProductController(IProductService _productService)
