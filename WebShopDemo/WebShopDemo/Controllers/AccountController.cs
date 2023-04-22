@@ -127,5 +127,7 @@ namespace WebShopDemo.Controllers
 
             return RedirectToAction("Index", "Home");   
         }
+
+        public async 
     }
 }
