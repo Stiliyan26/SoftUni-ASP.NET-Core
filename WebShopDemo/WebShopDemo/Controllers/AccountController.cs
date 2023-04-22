@@ -118,5 +118,14 @@ namespace WebShopDemo.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        public async Task<IActionResult> CreateRoles()
+        {
+            await roleManager.CreateAsync(new IdentityRole(RoleConstants.Manager));
+            await roleManager.CreateAsync(new IdentityRole(RoleConstants.Supervisor));
+            await roleManager.CreateAsync(new IdentityRole(RoleConstants.Administrator));
+
+            return RedirectToAction("Index", "Home");   
+        }
     }
 }
