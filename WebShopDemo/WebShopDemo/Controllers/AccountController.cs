@@ -25,7 +25,7 @@ namespace WebShopDemo.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Register() 
+        public IActionResult Register()
         {
             var model = new RegisterViewModel();
 
@@ -95,7 +95,7 @@ namespace WebShopDemo.Controllers
             if (user != null)
             {
                 var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
-                
+
                 if (result.Succeeded)
                 {
                     if (model.ReturnUrl != null)
@@ -125,9 +125,21 @@ namespace WebShopDemo.Controllers
             await roleManager.CreateAsync(new IdentityRole(RoleConstants.Supervisor));
             await roleManager.CreateAsync(new IdentityRole(RoleConstants.Administrator));
 
-            return RedirectToAction("Index", "Home");   
+            return RedirectToAction("Index", "Home");
         }
 
-        public async 
+        public async Task<IActionResult> AddUsersToRoles()
+        {
+            string email1 = "stili@abv.bg";
+            string email2 = "jozi5@abv.bg";
+
+            var user = await userManager.FindByEmailAsync(email1);
+            var user2 = await userManager.FindByEmailAsync(email2);
+
+            await userManager.AddToRoleAsync(user, RoleConstants.Manager);
+            await userManager.AddToRolesAsync(user2, new string[] { RoleConstants.Manager, RoleConstants.Supervisor });
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
