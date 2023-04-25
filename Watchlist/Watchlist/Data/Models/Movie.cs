@@ -32,8 +32,7 @@ namespace Watchlist.Data.Models
         [ForeignKey(nameof(Genre))]
         public int GenreId { get; set; }
 
-        [Required]
-        public Genre Genre { get; set;} = null!;
+        public Genre? Genre { get; set;} = null!;
 
         public List<UserMovie> UsersMovies { get; set; }
     }

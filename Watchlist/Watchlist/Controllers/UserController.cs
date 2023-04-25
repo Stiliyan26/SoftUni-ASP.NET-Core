@@ -49,9 +49,7 @@ namespace Watchlist.Controllers
 
             if (result.Succeeded)
             {
-                await signInManager.SignInAsync(user, isPersistent: false);
-
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "User");
             }
 
             foreach (var error in result.Errors)
@@ -88,7 +86,7 @@ namespace Watchlist.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("All", "Movies");
                 }
             }
 
