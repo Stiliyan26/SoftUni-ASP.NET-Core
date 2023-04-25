@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a2fym7o63qDojgg+F57V8HyrpX2IUsAUC3y8gDTw1ZyNapq2G02q0Fx3PUHOz9Jc7Hc6AS53YlxIRs2N3Nr2Pg==",
+  "dgSpecHash": "YjEzp23CEaP8/slfs7GXRLjmSJDvFPlNKTE0HtQSNBUOzALUJZhdX1eojACSpuZJO9BqCyN3KmEvhYWDJ4d9Ww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Stili\\Downloads\\Watchlist_Skeleton_6.0\\Watchlist\\Watchlist.csproj",
+  "projectFilePath": "C:\\GitHub\\Softuni-ASP.NET-Core\\Watchlist\\Watchlist\\Watchlist.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Stili\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Stili\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
