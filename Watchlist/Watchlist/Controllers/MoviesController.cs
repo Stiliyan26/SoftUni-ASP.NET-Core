@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Linq.Expressions;
+using System.Security.Claims;
 using Watchlist.Models;
 using Watchlist.Services;
 
@@ -9,7 +11,7 @@ namespace Watchlist.Controllers
     [Authorize]
     public class MoviesController : Controller
     {
-        private readonly IMovieService movieService;
+        private readonly IMovieService movieService;    
         public MoviesController(IMovieService _movieService)
         {
             movieService = _movieService;
@@ -55,6 +57,48 @@ namespace Watchlist.Controllers
 
                 return View(model);
             }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddToCollection(int movieId)
+        {
+            try
+            {
+                var userId = User.Claims
+                .FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?
+                .Value;
+
+                await movieService.AddMovieToCollectionAsync(movieId, userId);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return RedirectToAction(nameof(All));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Watched()
+        {
+            var userId = User.Claims
+                .FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?
+                .Value;
+
+            IEnumerable<MovieViewModel> movies = await movieService.GetWatchedMoviesAsync(userId);
+
+            return View("Watched", movies);
+        }
+
+        public async Task<IActionResult> RemoveFromCollection(int movieId)
+        {
+            var userId = User.Claims
+                .FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?
+                .Value;
+
+            await movieService.RemoveMovieFromCollectionAsync(movieId, userId);
+
+            return RedirectToAction(nameof(Watched));
         }
     }
 }
