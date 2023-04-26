@@ -32,7 +32,10 @@ namespace Watchlist.Services
         public async Task AddMovieToCollectionAsync(int movieId, string userId)
         {
             var user = await context.Users
-                .FirstOrDefaultAsync(u => u.Id == userId);
+                .Where(u => u.Id == userId)
+                .Include(u => u.UsersMovies)
+                .ThenInclude(um => um.Movie)
+                .FirstOrDefaultAsync();
 
             if (user == null)
             {
@@ -47,17 +50,20 @@ namespace Watchlist.Services
                 throw new ArgumentException("Invlaid movie ID!");
             }
 
-            UserMovie validUserMovie = new UserMovie()
+            if (!user.UsersMovies.Any(um => um.MovieId == movieId))
             {
-                MovieId = movie.Id,
-                UserId = user.Id,
-                Movie = movie,
-                User = user
-            };
+                UserMovie validUserMovie = new UserMovie()
+                {
+                    MovieId = movie.Id,
+                    UserId = user.Id,
+                    Movie = movie,
+                    User = user
+                };
 
-            user.UsersMovies.Add(validUserMovie);
+                user.UsersMovies.Add(validUserMovie);
 
-            await context.SaveChangesAsync();   
+                await context.SaveChangesAsync();
+            }
         }
 
         public async Task<IEnumerable<MovieViewModel>> GetAllAsync()
