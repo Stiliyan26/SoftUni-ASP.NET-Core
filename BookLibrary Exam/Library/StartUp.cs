@@ -1,5 +1,6 @@
 using Library.Data;
 using Library.Data.Models;
+using Library.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +18,10 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     options.Password.RequiredLength = 5;
 })
     .AddEntityFrameworkStores<LibraryDbContext>();
+
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IBookService, BookService>();
 
 var app = builder.Build();
 

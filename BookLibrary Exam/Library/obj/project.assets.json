@@ -10296,11 +10296,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stili\\Downloads\\01. Book Library_Skeleton_6.0\\Library\\Library.csproj",
+      "projectUniqueName": "C:\\GitHub\\Softuni-ASP.NET-Core\\BookLibrary Exam\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "C:\\Users\\Stili\\Downloads\\01. Book Library_Skeleton_6.0\\Library\\Library.csproj",
+      "projectPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\BookLibrary Exam\\Library\\Library.csproj",
       "packagesPath": "C:\\Users\\Stili\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stili\\Downloads\\01. Book Library_Skeleton_6.0\\Library\\obj\\",
+      "outputPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\BookLibrary Exam\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Stili\\AppData\\Roaming\\NuGet\\NuGet.Config",

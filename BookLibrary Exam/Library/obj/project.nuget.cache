@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jUsRjpCySweJDPy47X5t9PSrD1CgKeERnRn9aiN2oy/AN3+YNQ9pOTIdgxZAA4LJSaGQIEQCsLQjh0Ps6f02mQ==",
+  "dgSpecHash": "6NPUAF1z4gRBVT5ATMbJ3lptQaYe8oXRBkviIh2LwEKAKS1fnSPusfBaqZEhBVQy5oy9RA5A/eWgKWHJD56QYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Stili\\Downloads\\01. Book Library_Skeleton_6.0\\Library\\Library.csproj",
+  "projectFilePath": "C:\\GitHub\\Softuni-ASP.NET-Core\\BookLibrary Exam\\Library\\Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Stili\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Stili\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
