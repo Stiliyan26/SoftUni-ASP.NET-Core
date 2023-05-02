@@ -2,6 +2,7 @@
 using Library.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Library.Controllers
 {
@@ -56,6 +57,57 @@ namespace Library.Controllers
             return View(model);
         }
 
-        
+        [HttpPost]
+        public async Task<IActionResult> AddToCollection(int bookId)
+        {
+            try
+            {
+                var userId = User.Claims
+                    .FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?
+                    .Value;
+
+                await bookService.AddBookToCollectionAsync(userId, bookId);
+            }
+            catch (Exception)
+            {
+                throw new ArgumentException("Something in went wrong!");
+            }
+
+            return RedirectToAction(nameof(All));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Mine()
+        {
+            var userId = User.Claims
+                .FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?
+                .Value;
+
+            var myBooks = await bookService.GetMineBooksAsync(userId);
+
+
+            return View("Mine", myBooks);
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> RemoveFromCollection(int bookId)
+        {
+            try
+            {
+                var userId = User.Claims
+                    .FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?
+                    .Value;
+
+                await bookService.RemoveBookFromCollectionAsync(userId, bookId);
+            }
+            catch (Exception)
+            {
+
+                throw new ArgumentException("Something in went wrong!");
+            }
+
+            return RedirectToAction(nameof(Mine));
+        }
     }
 }

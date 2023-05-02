@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Library.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         private UserManager<ApplicationUser> userManager;
@@ -23,6 +24,11 @@ namespace Library.Controllers
         [AllowAnonymous]
         public IActionResult Register()
         {
+            if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                return RedirectToAction("All", "Books");
+            }
+
             RegisterViewModel model = new RegisterViewModel();
 
             return View(model);
@@ -62,6 +68,11 @@ namespace Library.Controllers
         [AllowAnonymous]
         public IActionResult Login()
         {
+            if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                return RedirectToAction("All", "Books");
+            }
+
             LoginViewModel model = new LoginViewModel();
 
             return View(model);

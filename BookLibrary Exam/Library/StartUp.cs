@@ -19,6 +19,11 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 })
     .AddEntityFrameworkStores<LibraryDbContext>();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/User/Login";  
+});
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IBookService, BookService>();

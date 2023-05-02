@@ -72,7 +72,7 @@ namespace Watchlist.Controllers
             }
             catch (Exception)
             {
-                throw;
+                throw;  
             }
 
             return RedirectToAction(nameof(All));
