@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tone2dQJKo0ZFlorauDrFhZtH/yHbS05mjpTB1fImHQ=",
+  "Hash": "qMf42cXRoYNuLXjkiIbKLi5JjIkIAsIGOwH1Bk3jnpU=",
   "Source": "Watchlist",
   "BasePath": "_content/Watchlist",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\GitHub\\Softuni-ASP.NET-Core\\Watchlist\\Watchlist\\wwwroot\\js\\jqueryoverride-validator.js",
+      "SourceId": "Watchlist",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GitHub\\Softuni-ASP.NET-Core\\Watchlist\\Watchlist\\wwwroot\\",
+      "BasePath": "_content/Watchlist",
+      "RelativePath": "js/jqueryoverride-validator.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jqueryoverride-validator.js"
     },
     {
       "Identity": "C:\\GitHub\\Softuni-ASP.NET-Core\\Watchlist\\Watchlist\\wwwroot\\js\\site.js",

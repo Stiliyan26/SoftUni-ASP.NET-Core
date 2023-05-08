@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\GitHub\\Softuni-ASP.NET-Core\\Watchlist\\Watchlist\\wwwroot\\js\\jqueryoverride-validator.js",
+      "PackagePath": "staticwebassets\\js\\jqueryoverride-validator.js"
+    },
+    {
       "Id": "C:\\GitHub\\Softuni-ASP.NET-Core\\Watchlist\\Watchlist\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
