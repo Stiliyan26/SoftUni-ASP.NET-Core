@@ -62,7 +62,7 @@ namespace Watchlist.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var model = movieService.GetForEditAsync(id);
+            var model = await movieService.GetForEditAsync(id);
 
             return View(model);
         }

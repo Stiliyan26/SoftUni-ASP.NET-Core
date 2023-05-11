@@ -95,7 +95,7 @@ namespace Watchlist.Services
                     Id = m.Id,
                     ImageUrl = m.ImageUrl,
                     Rating = m.Rating,
-                    Title = m.Title
+                    Title = m.Title,
                 });
         }
 
@@ -109,15 +109,19 @@ namespace Watchlist.Services
                 throw new ArgumentException("No such data...");
             }
 
-            return new EditMovieViewModel()
+            var model = new EditMovieViewModel()
             {
-                Id = id,
+                Id = movie.Id,
                 Director = movie.Director,
                 GenreId = movie.GenreId,
                 ImageUrl = movie.ImageUrl,
                 Rating = movie.Rating,
                 Title = movie.Title
             };
+
+            model.Genres = await GetGenresAsync();
+
+            return model;
         }
 
         public async Task<IEnumerable<Genre>> GetGenresAsync()
