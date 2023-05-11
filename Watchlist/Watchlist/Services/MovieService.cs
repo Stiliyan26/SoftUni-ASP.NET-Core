@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Watchlist.Contracts;
 using Watchlist.Data;
 using Watchlist.Data.Models;
 using Watchlist.Models;
@@ -66,6 +67,20 @@ namespace Watchlist.Services
             }
         }
 
+        public async Task EditAsync(EditMovieViewModel model)
+        {
+            var entity = await context.Movies
+                .FindAsync(model.Id);
+
+            entity.Rating = model.Rating;
+            entity.ImageUrl = model.ImageUrl;
+            entity.Director = model.Director;
+            entity.Title = model.Title;
+            entity.GenreId = model.GenreId;
+
+            await context.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<MovieViewModel>> GetAllAsync()
         {
             var entities = await context.Movies
@@ -82,6 +97,27 @@ namespace Watchlist.Services
                     Rating = m.Rating,
                     Title = m.Title
                 });
+        }
+
+        public async Task<EditMovieViewModel> GetForEditAsync(int id)
+        {
+            var movie = await context.Movies
+                .FindAsync(id);
+
+            if (movie == null)
+            {
+                throw new ArgumentException("No such data...");
+            }
+
+            return new EditMovieViewModel()
+            {
+                Id = id,
+                Director = movie.Director,
+                GenreId = movie.GenreId,
+                ImageUrl = movie.ImageUrl,
+                Rating = movie.Rating,
+                Title = movie.Title
+            };
         }
 
         public async Task<IEnumerable<Genre>> GetGenresAsync()

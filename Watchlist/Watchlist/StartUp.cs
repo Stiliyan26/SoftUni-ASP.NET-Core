@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
+using Watchlist.Contracts;
 using Watchlist.Data;
 using Watchlist.Data.Models;
 using Watchlist.ModelBinders;

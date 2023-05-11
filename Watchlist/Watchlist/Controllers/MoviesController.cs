@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Linq.Expressions;
 using System.Security.Claims;
+using Watchlist.Contracts;
 using Watchlist.Models;
-using Watchlist.Services;
 
 namespace Watchlist.Controllers
 {
@@ -57,6 +57,27 @@ namespace Watchlist.Controllers
 
                 return View(model);
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var model = movieService.GetForEditAsync(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(EditMovieViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            await movieService.EditAsync(model);
+
+            return RedirectToAction(nameof(All));
         }
 
         [HttpPost]

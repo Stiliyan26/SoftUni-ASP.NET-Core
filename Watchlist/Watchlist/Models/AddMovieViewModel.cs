@@ -17,7 +17,7 @@ namespace Watchlist.Models
         public string ImageUrl { get; set; } = null!;
 
         [Required]
-        //c[Range(typeof(decimal), "0.00", "10.00", ConvertValueInInvariantCulture = true)]
+        //[Range(typeof(decimal), "0.00", "10.00", ConvertValueInInvariantCulture = true)]
         public decimal Rating { get; set; }
 
         public int GenreId { get; set; }

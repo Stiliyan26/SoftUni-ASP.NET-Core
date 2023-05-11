@@ -1,7 +1,7 @@
 ﻿using Watchlist.Data.Models;
 using Watchlist.Models;
 
-namespace Watchlist.Services
+namespace Watchlist.Contracts
 {
     public interface IMovieService
     {
@@ -16,5 +16,9 @@ namespace Watchlist.Services
         Task<IEnumerable<MovieViewModel>> GetWatchedMoviesAsync(string userId);
 
         Task RemoveMovieFromCollectionAsync(int movieId, string userId);
+
+        Task<EditMovieViewModel> GetForEditAsync(int id);
+
+        Task EditAsync(EditMovieViewModel model);
     }
 }
