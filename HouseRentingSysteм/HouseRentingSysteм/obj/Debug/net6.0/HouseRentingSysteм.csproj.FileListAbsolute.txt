@@ -78,3 +78,4 @@ C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\obj\Debug
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\obj\Debug\net6.0\HouseRentingSysteм.genruntimeconfig.cache
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\obj\Debug\net6.0\ref\HouseRentingSysteм.dll
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\obj\Debug\net6.0\HouseRentingSysteм.MvcApplicationPartsAssemblyInfo.cs
+C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\bin\Debug\net6.0\appsettings.Production.json
