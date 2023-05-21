@@ -1,4 +1,5 @@
-﻿using HouseRentingSysteм.Models;
+﻿using HouseRentingSystem.Core.Contracts;
+using HouseRentingSysteм.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,9 +7,17 @@ namespace HouseRentingSysteм.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IHouseService houseService;
+        public HomeController(IHouseService _houseService)
         {
-            return View();
+            this.houseService = _houseService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var model = await houseService.LastThreeHouses();
+
+            return View(model);
         }
 
         public IActionResult Privacy()
