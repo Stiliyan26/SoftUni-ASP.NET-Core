@@ -28,6 +28,17 @@ namespace MovieReview.Services
             await context.SaveChangesAsync();
         }
 
+        public async Task DeleteMovieAsync(int id)
+        {
+            var movie = await context.Movies.FindAsync(id);
+
+            if (movie != null)
+            {
+                context.Movies.Remove(movie);
+                await context.SaveChangesAsync();
+            }
+        }
+
         public async Task<IEnumerable<MovieViewModel>> GetAllAsync()
         {
             var entities = await context

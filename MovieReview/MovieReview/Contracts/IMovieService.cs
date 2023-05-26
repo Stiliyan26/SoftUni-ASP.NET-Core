@@ -9,5 +9,7 @@ namespace MovieReview.Contracts
         Task<IEnumerable<MovieViewModel>> GetAllAsync();
 
         Task<MovieViewModel> GetMovieByIdAsync(int id);
+
+        Task DeleteMovieAsync(int id);
     }
 }

@@ -66,12 +66,11 @@ namespace MovieReview.Controllers
             return View(model);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> AddReview()
+        public async Task<IActionResult> Delete(int Id)
         {
-            AddReviewViewModel model = new AddReviewViewModel();
+            await movieService.DeleteMovieAsync(Id);
 
-            return View(model);
+            return RedirectToAction(nameof(All));
         }
     }
 }
