@@ -11,9 +11,9 @@ namespace MovieReview.Data
         {
         }
 
-        public virtual DbSet<Movie> Movies { get; set; }
+        public virtual DbSet<Movie> Movies { get; set; } = null!;
 
-        public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<Review> Reviews { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

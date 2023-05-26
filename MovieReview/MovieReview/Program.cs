@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MovieReview.Contracts;
 using MovieReview.Data;
 using MovieReview.Data.Models;
+using MovieReview.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +19,6 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 {
-    options.Password.RequireNonAlphanumeric = true;
     options.Password.RequiredLength = 6;
     options.User.RequireUniqueEmail = true;
 })
@@ -27,6 +28,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/Login";
 });
+
+builder.Services.AddScoped<IMovieService, MovieService>();
 
 var app = builder.Build();
 

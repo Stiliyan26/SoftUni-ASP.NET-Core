@@ -15,11 +15,11 @@ namespace MovieReview.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
+            if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                return RedirectToAction("All", "Movies");
+            }
 
-        public IActionResult Privacy()
-        {
             return View();
         }
 
