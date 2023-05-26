@@ -26,6 +26,8 @@ namespace MovieReview.Data.Models
         [ForeignKey(nameof(Review))]
         public int? ReviewId { get; set; }
 
-        public virtual Review Review { get; set; } 
+        public virtual Review Review { get; set; }
+
+        public List<UserMovie> UsersMovies { get; set; }
     }
 }

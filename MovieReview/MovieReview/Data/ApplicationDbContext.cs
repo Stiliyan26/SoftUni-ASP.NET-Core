@@ -17,6 +17,9 @@ namespace MovieReview.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<UserMovie>()
+                .HasKey(um => new { um.UserId, um.MovieId });
+
             base.OnModelCreating(modelBuilder);
         }
     }

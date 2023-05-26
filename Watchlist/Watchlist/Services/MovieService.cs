@@ -25,8 +25,8 @@ namespace Watchlist.Services
                 ImageUrl = model.ImageUrl,
                 Rating = model.Rating,
             };
-
             await context.Movies.AddAsync(entity);
+
             await context.SaveChangesAsync();
         }
 
@@ -106,7 +106,7 @@ namespace Watchlist.Services
 
             if (movie == null)
             {
-                throw new ArgumentException("No such data...");
+                throw new ArgumentException("No such data..."); 
             }
 
             var model = new EditMovieViewModel()

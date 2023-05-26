@@ -10,5 +10,7 @@ namespace MovieReview.Data.Models
 
         [StringLength(20)]
         public string? LastName { get; set; }
+
+        public List<UserMovie> UsersMovies { get; set; } = new List<UserMovie>();
     }
 }

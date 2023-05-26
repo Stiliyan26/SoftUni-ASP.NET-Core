@@ -297,6 +297,21 @@ namespace MovieReview.Migrations
                     b.ToTable("Reviews");
                 });
 
+            modelBuilder.Entity("MovieReview.Data.Models.UserMovie", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "MovieId");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("UserMovie");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -364,6 +379,35 @@ namespace MovieReview.Migrations
                         .HasForeignKey("MovieId");
 
                     b.Navigation("Movie");
+                });
+
+            modelBuilder.Entity("MovieReview.Data.Models.UserMovie", b =>
+                {
+                    b.HasOne("MovieReview.Data.Models.Movie", "Movie")
+                        .WithMany("UsersMovies")
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MovieReview.Data.Models.ApplicationUser", "User")
+                        .WithMany("UsersMovies")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movie");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MovieReview.Data.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("UsersMovies");
+                });
+
+            modelBuilder.Entity("MovieReview.Data.Models.Movie", b =>
+                {
+                    b.Navigation("UsersMovies");
                 });
 #pragma warning restore 612, 618
         }

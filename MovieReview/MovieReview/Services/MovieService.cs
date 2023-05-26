@@ -17,7 +17,7 @@ namespace MovieReview.Services
         public async Task AddMovieAsync(AddMovieViewModel model)
         {
             var entity = new Movie()
-            {
+            {   
                 Title = model.Title,
                 Director = model.Director,
                 Genre = model.Genre,
@@ -37,11 +37,33 @@ namespace MovieReview.Services
             return entities
                 .Select(m => new MovieViewModel
                 {
+                    Id = m.Id,
                     Title = m.Title,
                     Director = m.Director,
                     Genre = m.Genre,
                     ReleaseDate = m.ReleaseDate
                 });
+        }
+
+        public async Task<MovieViewModel> GetMovieByIdAsync(int id)
+        {
+            var movie = await context.Movies
+                .FindAsync(id);
+
+            if (movie == null)
+            {
+                throw new ArgumentException("No such data...");
+            }
+
+            var model = new MovieViewModel()
+            {
+                Title = movie.Title,
+                Director = movie.Director,
+                Genre = movie.Genre,
+                ReleaseDate = movie.ReleaseDate
+            };
+
+            return model;
         }
     }
 }

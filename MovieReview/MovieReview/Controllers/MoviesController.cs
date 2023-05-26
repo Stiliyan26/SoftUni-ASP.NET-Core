@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MovieReview.Contracts;
 using MovieReview.Models;
 using MovieReview.Services;
 
 namespace MovieReview.Controllers
 {
+    [Authorize]
     public class MoviesController : Controller
     {
         private readonly IMovieService movieService;
@@ -35,6 +37,7 @@ namespace MovieReview.Controllers
             return View(model);
         }
 
+        [HttpPost]
         public async Task<IActionResult> Add(AddMovieViewModel model)
         {
             if (!ModelState.IsValid)
@@ -54,6 +57,21 @@ namespace MovieReview.Controllers
 
                 return View(model);
             }
+        }
+
+        public async Task<IActionResult> Details(int movieId)
+        {
+            var model = await movieService.GetMovieByIdAsync(movieId);
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AddReview()
+        {
+            AddReviewViewModel model = new AddReviewViewModel();
+
+            return View(model);
         }
     }
 }

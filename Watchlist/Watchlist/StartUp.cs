@@ -8,7 +8,7 @@ using Watchlist.ModelBinders;
 using Watchlist.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+// PASSWORD SHOULD HAVE UPPER, LOWER CASE LETTERS AND NUMBERS
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<WatchlistDbContext>(options =>
     options.UseSqlServer(connectionString));

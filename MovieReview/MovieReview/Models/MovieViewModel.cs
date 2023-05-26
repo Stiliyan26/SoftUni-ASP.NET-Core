@@ -5,6 +5,7 @@ namespace MovieReview.Models
     public class MovieViewModel
     {
         public int Id { get; set; }
+
         public string Title { get; set; } = null!;
 
         public string Director { get; set; } = null!;

@@ -23,6 +23,7 @@ namespace Watchlist.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        // PASSWORD SHOULD HAVE UPPER, LOWER CASE LETTERS AND NUMBERS
         public IActionResult Register()
         {
             if (User?.Identity?.IsAuthenticated ?? false)

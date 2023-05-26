@@ -7,5 +7,7 @@ namespace MovieReview.Contracts
         Task AddMovieAsync(AddMovieViewModel model);
 
         Task<IEnumerable<MovieViewModel>> GetAllAsync();
+
+        Task<MovieViewModel> GetMovieByIdAsync(int id);
     }
 }

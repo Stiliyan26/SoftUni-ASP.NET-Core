@@ -9,6 +9,7 @@ namespace MovieReview.Data.Models
         public int Id { get; set; }
 
         [Required]
+        [Range(typeof(decimal), "0.0", "10.0")]
         public decimal Rating { get; set; }
 
         [Required]
