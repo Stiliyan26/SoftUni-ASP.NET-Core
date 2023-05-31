@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JXD6xpg4QHwF2kB0JWaFhQcmJ3m+6IZKIwkDx5KiWu8=",
+  "Hash": "4SOLuXJuMYXzBImu4V22HjXJ4enTgCQ0+4AQjhw0ZX0=",
   "Source": "HouseRentingSysteм",
   "BasePath": "_content/HouseRentingSysteм",
   "Mode": "Default",
@@ -1069,6 +1069,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\GitHub\\Softuni-ASP.NET-Core\\HouseRentingSysteм\\HouseRentingSysteм\\wwwroot\\lib\\toastr\\toastr.min.css",
+      "SourceId": "HouseRentingSysteм",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GitHub\\Softuni-ASP.NET-Core\\HouseRentingSysteм\\HouseRentingSysteм\\wwwroot\\",
+      "BasePath": "_content/HouseRentingSysteм",
+      "RelativePath": "lib/toastr/toastr.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\toastr\\toastr.min.css"
+    },
+    {
+      "Identity": "C:\\GitHub\\Softuni-ASP.NET-Core\\HouseRentingSysteм\\HouseRentingSysteм\\wwwroot\\lib\\toastr\\toastr.min.js",
+      "SourceId": "HouseRentingSysteм",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\GitHub\\Softuni-ASP.NET-Core\\HouseRentingSysteм\\HouseRentingSysteм\\wwwroot\\",
+      "BasePath": "_content/HouseRentingSysteм",
+      "RelativePath": "lib/toastr/toastr.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\toastr\\toastr.min.js"
     },
     {
       "Identity": "C:\\Users\\Stili\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\6.0.11\\staticwebassets\\V5\\css\\site.css",

@@ -1,4 +1,5 @@
-﻿using HouseRentingSystem.Core.Contracts;
+﻿using HouseRentingSystem.Core.Constants;
+using HouseRentingSystem.Core.Contracts;
 using HouseRentingSystem.Core.Models.Agent;
 using HouseRentingSysteм.Extensions;
 using Microsoft.AspNetCore.Authorization;
@@ -23,15 +24,47 @@ namespace HouseRentingSysteм.Controllers
 
             if (await agentService.ExistsById(User.Id()))
             {
-                return BadRequest();
+                TempData[MessageConstants.ErrorMessage] = "You are already an agent!";
+                return RedirectToAction("Index", "Home");
             }
 
-            return View();
+            var model = new BecomeAgentModel();
+
+            return View(model);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Become(BecomeAgentModel model)
         {
+            var userId = User.Id();
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            if (await agentService.ExistsById(userId))
+            {
+                TempData[MessageConstants.ErrorMessage] = "You are already an agent!";
+                return RedirectToAction("Index", "Home");
+            }
+
+            if (await agentService.UserWithPhoneNumberExists(model.PhoneNumber))
+            {
+                TempData[MessageConstants.ErrorMessage] = "Phone already exists!";
+                return RedirectToAction("Index", "Home");
+            }
+
+            if (await agentService.UserHasRents(userId))
+            {
+                TempData[MessageConstants.ErrorMessage] = "You should not have any rents to become an agent!";
+
+                return RedirectToAction("All", "House");
+            }
+
+            await agentService.Create(userId, model.PhoneNumber);
+
             return RedirectToAction("All", "House");
         }
     }
