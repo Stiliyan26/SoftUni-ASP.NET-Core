@@ -1,4 +1,6 @@
-﻿using HouseRentingSystem.Core.Models.House;
+﻿using HouseRentingSystem.Core.Contracts;
+using HouseRentingSystem.Core.Models.House;
+using HouseRentingSysteм.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +9,17 @@ namespace HouseRentingSysteм.Controllers
     [Authorize]
     public class HouseController : Controller
     {
+        private readonly IHouseService houseService;
+
+        private readonly IAgentService agentService;
+        public HouseController(
+            IHouseService _houseService,
+            IAgentService _agentService)
+        {
+            houseService = _houseService;
+            agentService= _agentService;
+        }
+
         [AllowAnonymous]
         public async Task<IActionResult> All()
         {
@@ -31,15 +44,42 @@ namespace HouseRentingSysteм.Controllers
         }
 
         [HttpGet]
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
-            return View();
+            if ((await agentService.ExistsById(User.Id())) == false)
+            {
+                return RedirectToAction(nameof(AgentController.Become), "Agent");
+            }
+
+            var model = new HouseModel()
+            {
+                HouseCategories = await houseService.AllCategories()
+            };
+
+            return View(model);
         }
 
         [HttpPost]
         public async Task<IActionResult> Add(HouseModel model)
         {
-            int id = 1;
+            if ((await agentService.ExistsById(User.Id())) == false)
+            {
+                return RedirectToAction(nameof(AgentController.Become), "Agent");
+            }
+
+            if ((await houseService.CategoryExists(model.CategoryId)) == false)
+            {
+                ModelState.AddModelError(nameof(model.CategoryId), "Category does not exists");
+            }
+
+            if (!ModelState.IsValid)
+            {
+
+
+                return View(model);
+            }
+
+            int id = await houseService.Create(model);
 
             return RedirectToAction(nameof(Details), new { id });
         }
