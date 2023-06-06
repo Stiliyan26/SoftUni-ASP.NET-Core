@@ -74,12 +74,14 @@ namespace HouseRentingSysteм.Controllers
 
             if (!ModelState.IsValid)
             {
-
+                model.HouseCategories = await houseService.AllCategories();
 
                 return View(model);
             }
 
-            int id = await houseService.Create(model);
+            int agentId = await agentService.GetAgentId(User.Id());
+
+            int id = await houseService.Create(model, agentId);
 
             return RedirectToAction(nameof(Details), new { id });
         }

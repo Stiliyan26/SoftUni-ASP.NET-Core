@@ -38,7 +38,7 @@ namespace HouseRentingSystem.Core.Services
                 .AnyAsync(c => c.Id == categoryId);
         }
 
-        public async Task<int> Create(HouseModel model)
+        public async Task<int> Create(HouseModel model, int agentId)
         {
             var house = new House()
             {
@@ -48,6 +48,7 @@ namespace HouseRentingSystem.Core.Services
                 ImageUrl = model.ImageUrl,
                 PricePerMonth = model.PricePerMonth,
                 Title = model.Title,
+                AgentId = agentId
             };
 
             await repo.AddAsync(house);
