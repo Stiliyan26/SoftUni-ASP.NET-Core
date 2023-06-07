@@ -27,7 +27,7 @@ namespace IdentityAdvancedDemo.Controllers
         {
             if (User?.Identity?.IsAuthenticated ?? false)
             {
-                return RedirectToAction("All", "Movies");
+                return RedirectToAction("Index", "Home");
             }
 
             var model = new RegisterViewModel();
@@ -71,7 +71,7 @@ namespace IdentityAdvancedDemo.Controllers
         {
             if (User?.Identity?.IsAuthenticated ?? false)
             {
-                return RedirectToAction("All", "Movies");
+                return RedirectToAction("Index", "Home");
             }
 
             LoginViewModel model = new LoginViewModel();
@@ -96,7 +96,7 @@ namespace IdentityAdvancedDemo.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("All", "Movies");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
