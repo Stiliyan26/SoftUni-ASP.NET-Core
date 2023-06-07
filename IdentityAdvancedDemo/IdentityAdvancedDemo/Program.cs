@@ -16,6 +16,21 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/User/Login";
+    options.LogoutPath = "/User/Logout";
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("MyPolicy", policy =>
+    {
+        policy.RequireRole("Admin");
+        policy.RequireClaim("EmployeeNumber");
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
