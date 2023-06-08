@@ -19,6 +19,13 @@ builder.Services.AddDefaultIdentity<ApplicationUser>()
 
 builder.Services.AddControllersWithViews();
 
+/*builder.Services.AddAuthentication()
+    .AddFacebook(options =>
+    {
+        options.AppId = "65870822559";
+        options.AppSecret = "";
+    });*/
+
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/User/Login";
@@ -59,6 +66,12 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+);    
+
 app.MapRazorPages();
 
 app.Run();
