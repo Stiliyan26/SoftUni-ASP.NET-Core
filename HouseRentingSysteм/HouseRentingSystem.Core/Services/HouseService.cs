@@ -1,4 +1,5 @@
 ﻿using HouseRentingSystem.Core.Contracts;
+using HouseRentingSystem.Core.Models.Agent;
 using HouseRentingSystem.Core.Models.House;
 using HouseRentingSystem.Infrastructure.Data.Models;
 using Microsoft.EntityFrameworkCore;
@@ -153,6 +154,35 @@ namespace HouseRentingSystem.Core.Services
             await repo.SaveChangesAsync();
 
             return house.Id;
+        }
+
+        public async Task<bool> Exists(int id)
+        {
+            return await repo.AllReadonly<House>()
+                .AnyAsync(h => h.Id == id);
+        }
+
+        public async Task<HouseDetailsModel> HousesDetailsById(int id)
+        {
+            return await repo.AllReadonly<House>()
+                .Where(h => h.Id == id)
+                .Select(h => new HouseDetailsModel()
+                {
+                    Id = h.Id,
+                    Address = h.Address,
+                    Category = h.Category.Name,
+                    Description = h.Description,
+                    ImageUrl = h.ImageUrl,
+                    PricePerMonth = h.PricePerMonth,
+                    Title = h.Title,
+                    IsRented =  h.RenterId != null,
+                    Agent = new AgentServiceModel()
+                    {
+                        Email = h.Agent.User.Email,
+                        PhoneNumber = h.Agent.User.PhoneNumber,
+                    }
+                })
+                .FirstAsync();
         }
 
         public async Task<IEnumerable<HouseHomeModel>> LastThreeHouses()

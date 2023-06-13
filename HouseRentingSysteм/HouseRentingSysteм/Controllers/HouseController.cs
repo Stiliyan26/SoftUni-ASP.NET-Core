@@ -59,7 +59,12 @@ namespace HouseRentingSysteм.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
-            var model = new HouseDetailsModel();
+            if ((await houseService.Exists(id)) == false)
+            {
+                return RedirectToAction(nameof(All));
+            }
+
+            var model = await houseService.HousesDetailsById(id);
 
             return View(model);
         }
