@@ -98,6 +98,38 @@ namespace HouseRentingSystem.Core.Services
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<HouseServiceModel>> AllHousesByAgentId(int id)
+        {
+            return await repo.AllReadonly<House>()
+                .Where(h => h.AgentId == id)
+                .Select(h => new HouseServiceModel()
+                {
+                    Id = h.Id,
+                    Address = h.Address,
+                    ImageUrl = h.ImageUrl,
+                    IsRented = (h.RenterId != null) ? true : false,
+                    PricePerMonth = h.PricePerMonth,
+                    Title = h.Title
+                })
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<HouseServiceModel>> AllHousesByUserId(string userId)
+        {
+            return await repo.AllReadonly<House>()
+                .Where(h => h.RenterId == userId)
+                .Select(h => new HouseServiceModel()
+                {
+                    Id = h.Id,
+                    Address = h.Address,
+                    ImageUrl = h.ImageUrl,
+                    IsRented = (h.RenterId != null) ? true : false,
+                    PricePerMonth = h.PricePerMonth,
+                    Title = h.Title
+                })
+                .ToListAsync();
+        }
+
         public async Task<bool> CategoryExists(int categoryId)
         {
             return await repo.AllReadonly<Category>()
