@@ -156,10 +156,40 @@ namespace HouseRentingSystem.Core.Services
             return house.Id;
         }
 
+        public async Task Edit(int houseId, HouseModel model)
+        {
+            House existingHouse = await repo
+                .GetByIdAsync<House>(houseId);
+
+            if (existingHouse != null) 
+            {
+                existingHouse.Description = model.Description;
+                existingHouse.ImageUrl = model.ImageUrl;
+                existingHouse.PricePerMonth = model.PricePerMonth;
+                existingHouse.Title = model.Title;
+                existingHouse.Address = model.Address;
+                existingHouse.CategoryId = model.CategoryId;
+
+                await repo.SaveChangesAsync();
+            }
+        }
+
         public async Task<bool> Exists(int id)
         {
             return await repo.AllReadonly<House>()
                 .AnyAsync(h => h.Id == id);
+        }
+
+        public async Task<int> GetHouseCategoryId(int houseId)
+        {
+            return (await repo.GetByIdAsync<House>(houseId)).CategoryId;
+        }
+
+        public async Task<bool> HasAgentWithId(int houseId, string currentUserId)
+        {
+            return await repo.AllReadonly<House>()
+                .Include(h => h.Agent)
+                .AnyAsync(h => h.Agent.UserId == currentUserId && h.Id == houseId);
         }
 
         public async Task<HouseDetailsModel> HousesDetailsById(int id)
@@ -179,7 +209,7 @@ namespace HouseRentingSystem.Core.Services
                     Agent = new AgentServiceModel()
                     {
                         Email = h.Agent.User.Email,
-                        PhoneNumber = h.Agent.User.PhoneNumber,
+                        PhoneNumber = h.Agent.PhoneNumber,
                     }
                 })
                 .FirstAsync();

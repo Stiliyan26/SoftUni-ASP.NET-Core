@@ -115,14 +115,69 @@ namespace HouseRentingSysteм.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var model = new HouseModel();
+            if ((await houseService.Exists(id)) == false)
+            {
+                return RedirectToAction(nameof(All));
+            }
+
+            if ((await houseService.HasAgentWithId(id, User.Id())) == false)
+            {
+                return RedirectToPage("/Account/AccessDenied", new { area = "Identity" });
+            }
+
+            var house = await houseService.HousesDetailsById(id);
+            var categoryId = await houseService.GetHouseCategoryId(house.Id);
+
+            HouseModel model = new HouseModel()
+            {
+                Id = house.Id,
+                Address = house.Address,
+                CategoryId = categoryId,
+                Description = house.Description,
+                ImageUrl = house.ImageUrl,
+                PricePerMonth = house.PricePerMonth,
+                Title = house.Title,
+                HouseCategories = await houseService.AllCategories()
+            };
 
             return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, HouseModel model)
+        public async Task<IActionResult> Edit(HouseModel model)
         {
+            int id = model.Id;
+
+            if ((await houseService.Exists(id)) == false)
+            {
+                ModelState.AddModelError("", "House does not exist!");
+                model.HouseCategories = await houseService.AllCategories();
+
+                return View(model);
+            }
+
+            if ((await houseService.HasAgentWithId(id, User.Id())) == false)
+            {
+                return RedirectToPage("/Account/AccessDenied", new { area = "Identity" });
+            }
+
+            if ((await houseService.CategoryExists(model.CategoryId)) == false)
+            {
+                ModelState.AddModelError(nameof(model.CategoryId), "Category does not exist");
+                model.HouseCategories = await houseService.AllCategories();
+
+                return View(model);
+            }
+
+            if (!ModelState.IsValid)
+            {
+                model.HouseCategories = await houseService.AllCategories();
+
+                return View(model);
+            }
+
+            await houseService.Edit(id, model);
+
             return RedirectToAction(nameof(Details), new { id });
         }
 
