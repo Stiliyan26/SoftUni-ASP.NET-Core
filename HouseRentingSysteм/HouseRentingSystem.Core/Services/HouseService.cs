@@ -259,18 +259,34 @@ namespace HouseRentingSystem.Core.Services
                 .ToListAsync();
         }
 
+        public async Task Leave(int houseId)
+        {
+            House? house = await repo.GetByIdAsync<House>(houseId);
+
+            if (house != null && house.RenterId == null)
+            {
+                throw new ArgumentException("House is not rented!");
+            }
+
+            guard.AgainstNull(house, "House can't be found!");
+            house.RenterId = null;
+
+            await repo.SaveChangesAsync();
+        }
+
         public async Task Rent(int houseId, string currentUserID)
         {
-            var house = await repo.GetByIdAsync<House>(houseId);
+            House? house = await repo.GetByIdAsync<House>(houseId);
 
             if (house != null && house.RenterId != null)
             {
                 throw new ArgumentException("House is already rented!");
             }
 
-
+            guard.AgainstNull(house, "House can't be found!");
             house.RenterId = currentUserID;
 
+            await repo.SaveChangesAsync();
         }
     }
 }
