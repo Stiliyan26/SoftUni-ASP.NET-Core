@@ -40,6 +40,14 @@ namespace HouseRentingSystem.Core.Contracts
 
         Task<bool> HasAgentWithId(int houseId, string currentUserId);
 
-        Task<int> GetHouseCategoryId(int houseId); 
+        Task<int> GetHouseCategoryId(int houseId);
+
+        Task Delete(int houseId);
+
+        Task<bool> IsRented(int houseId);
+
+        Task<bool> IsRentedByUserWithId(int houseId, string currentUserId);
+
+        Task Rent(int houseId, string currentUserID);
     }
 }

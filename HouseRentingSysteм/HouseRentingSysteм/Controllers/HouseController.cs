@@ -144,11 +144,14 @@ namespace HouseRentingSysteм.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(HouseModel model)
+        public async Task<IActionResult> Edit(int id, HouseModel model)
         {
-            int id = model.Id;
+            if (id != model.Id)
+            {
+                return RedirectToPage("/Account/AccessDenied", new { area = "Identity" });
+            }
 
-            if ((await houseService.Exists(id)) == false)
+            if ((await houseService.Exists(model.Id)) == false)
             {
                 ModelState.AddModelError("", "House does not exist!");
                 model.HouseCategories = await houseService.AllCategories();
@@ -156,7 +159,7 @@ namespace HouseRentingSysteм.Controllers
                 return View(model);
             }
 
-            if ((await houseService.HasAgentWithId(id, User.Id())) == false)
+            if ((await houseService.HasAgentWithId(model.Id, User.Id())) == false)
             {
                 return RedirectToPage("/Account/AccessDenied", new { area = "Identity" });
             }
@@ -176,16 +179,51 @@ namespace HouseRentingSysteм.Controllers
                 return View(model);
             }
 
-            await houseService.Edit(id, model);
+            await houseService.Edit(model.Id, model);
 
-            return RedirectToAction(nameof(Details), new { id });
+            return RedirectToAction(nameof(Details), new { model.Id });
         }
 
-
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            return RedirectToAction(nameof(All), new { id });
+            if ((await houseService.Exists(id)) == false)
+            {
+                return RedirectToAction(nameof(All));
+            }
+
+            if ((await houseService.HasAgentWithId(id, User.Id())) == false)
+            {
+                return RedirectToPage("/Account/AccessDenied", new { area = "Identity" });
+            }
+
+            var house = await houseService.HousesDetailsById(id);
+            var model = new HouseDetailsViewModel()
+            {
+                Address = house.Address,
+                ImageUrl = house.ImageUrl,
+                Title = house.Title,
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id, HouseDetailsViewModel model)
+        {
+            if ((await houseService.Exists(id)) == false)
+            {
+                return RedirectToAction(nameof(All));
+            }
+
+            if ((await houseService.HasAgentWithId(id, User.Id())) == false)
+            {
+                return RedirectToPage("/Account/AccessDenied", new { area = "Identity" });
+            }
+
+            await houseService.Delete(id);
+
+            return RedirectToAction(nameof(All));
         }
 
         [HttpPost]
