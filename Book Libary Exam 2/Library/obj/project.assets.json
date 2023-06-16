@@ -10464,11 +10464,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stili\\Downloads\\10.Exam-Preparation-Library-Skeleton\\Library\\Library.csproj",
+      "projectUniqueName": "C:\\GitHub\\Softuni-ASP.NET-Core\\Book Libary Exam 2\\Library\\Library.csproj",
       "projectName": "Library",
-      "projectPath": "C:\\Users\\Stili\\Downloads\\10.Exam-Preparation-Library-Skeleton\\Library\\Library.csproj",
+      "projectPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\Book Libary Exam 2\\Library\\Library.csproj",
       "packagesPath": "C:\\Users\\Stili\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stili\\Downloads\\10.Exam-Preparation-Library-Skeleton\\Library\\obj\\",
+      "outputPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\Book Libary Exam 2\\Library\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Stili\\AppData\\Roaming\\NuGet\\NuGet.Config",

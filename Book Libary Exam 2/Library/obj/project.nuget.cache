@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mf/9lO0o+fPA8L9/Plk9SLkPDehphoTk7HqXYNaUiPN6TxK1Y8gaLq2PsmqhOaL9EofQ07CMy/lS40EJEGx+ZA==",
+  "dgSpecHash": "0ki7O3Q1UECcLRiCXkwDjUJMAvw6c/GGwx5F9We/Zx9EcW4pqu+99znoWR0Wv/T0cUrwidCFRF6daraHl2KUFA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Stili\\Downloads\\10.Exam-Preparation-Library-Skeleton\\Library\\Library.csproj",
+  "projectFilePath": "C:\\GitHub\\Softuni-ASP.NET-Core\\Book Libary Exam 2\\Library\\Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Stili\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Stili\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
