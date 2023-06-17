@@ -102,6 +102,8 @@ namespace Library.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnGetAsync(string returnUrl = null)
         {
+
+
             if (User?.Identity?.IsAuthenticated ?? false)
             {
                 return RedirectToAction("All", "Book");
