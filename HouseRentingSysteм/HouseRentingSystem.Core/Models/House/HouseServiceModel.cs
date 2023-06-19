@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HouseRentingSystem.Core.Contracts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Xml.Linq;
 
 namespace HouseRentingSystem.Core.Models.House
 {
-    public class HouseServiceModel
+    public class HouseServiceModel : IHouseModel
     {
         public int Id { get; init; }
 

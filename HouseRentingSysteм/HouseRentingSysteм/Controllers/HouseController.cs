@@ -1,4 +1,5 @@
 ﻿using HouseRentingSystem.Core.Contracts;
+using HouseRentingSystem.Core.Extensions;
 using HouseRentingSystem.Core.Models.House;
 using HouseRentingSysteм.Extensions;
 using HouseRentingSysteм.Models;
@@ -61,7 +62,8 @@ namespace HouseRentingSysteм.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> Details(int id)
+        [HttpGet]
+        public async Task<IActionResult> Details(int id, string information)
         {
             if ((await houseService.Exists(id)) == false)
             {
@@ -69,6 +71,13 @@ namespace HouseRentingSysteм.Controllers
             }
 
             var model = await houseService.HousesDetailsById(id);
+
+            if (information != model.GetInformation())
+            {
+                TempData["ErrorMessage"] = "Don't touch my slug!";
+
+                return RedirectToAction("Index", "Home");
+            }
 
             return View(model);
         }
@@ -113,7 +122,7 @@ namespace HouseRentingSysteм.Controllers
 
             int id = await houseService.Create(model, agentId);
 
-            return RedirectToAction(nameof(Details), new { id });
+            return RedirectToAction(nameof(Details), new { id = id, information = model.GetInformation() });
         }
 
         [HttpGet]
@@ -187,7 +196,7 @@ namespace HouseRentingSysteм.Controllers
 
             await houseService.Edit(model.Id, model);
 
-            return RedirectToAction(nameof(Details), new { model.Id });
+            return RedirectToAction(nameof(Details), new { model.Id, information = model.GetInformation() });
         }
 
         [HttpGet]
