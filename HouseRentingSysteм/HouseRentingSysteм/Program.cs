@@ -25,6 +25,7 @@ builder.Services.AddControllersWithViews()
     {
         options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
     });
+builder.Services.AddResponseCaching();
 
 builder.Services.AddApplicationServices();
 
@@ -52,5 +53,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
+
+app.UseResponseCaching();
 
 app.Run();
