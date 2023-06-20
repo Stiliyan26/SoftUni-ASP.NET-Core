@@ -63,6 +63,7 @@ app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
+    //Not needed
     endpoints.MapControllerRoute(
       name: "default",
       pattern: "{controller=Home}/{action=Index}/{id?}" 
