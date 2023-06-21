@@ -56,7 +56,6 @@ C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\HouseRentingSystem.WebApi.AssemblyInfoInputs.cache
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\HouseRentingSystem.WebApi.AssemblyInfo.cs
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\HouseRentingSystem.WebApi.csproj.CoreCompileInputs.cache
-C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\HouseRentingSystem.WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\HouseRentingSystem.WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\staticwebassets\msbuild.HouseRentingSystem.WebApi.Microsoft.AspNetCore.StaticWebAssets.props
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\staticwebassets\msbuild.build.HouseRentingSystem.WebApi.props
@@ -72,3 +71,4 @@ C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\HouseRentingSystem.WebApi.pdb
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\HouseRentingSystem.WebApi.genruntimeconfig.cache
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\ref\HouseRentingSystem.WebApi.dll
+C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSystem.WebApi\obj\Debug\net6.0\HouseRentingSystem.WebApi.MvcApplicationPartsAssemblyInfo.cs

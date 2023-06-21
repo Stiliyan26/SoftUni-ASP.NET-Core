@@ -72,7 +72,6 @@ C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\obj\Debug
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\obj\Debug\net6.0\HouseRentingSysteм.pdb
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\obj\Debug\net6.0\HouseRentingSysteм.genruntimeconfig.cache
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\obj\Debug\net6.0\ref\HouseRentingSysteм.dll
-C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\obj\Debug\net6.0\HouseRentingSysteм.MvcApplicationPartsAssemblyInfo.cs
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\bin\Debug\net6.0\appsettings.Production.json
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\bin\Debug\net6.0\MessagePack.dll
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\bin\Debug\net6.0\MessagePack.Annotations.dll
@@ -261,3 +260,4 @@ C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\bin\Debug
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\GitHub\Softuni-ASP.NET-Core\HouseRentingSysteм\HouseRentingSysteм\obj\Debug\net6.0\HouseRentingSysteм.MvcApplicationPartsAssemblyInfo.cs
