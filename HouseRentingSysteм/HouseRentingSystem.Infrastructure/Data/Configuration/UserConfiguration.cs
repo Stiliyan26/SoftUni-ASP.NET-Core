@@ -14,6 +14,10 @@ namespace HouseRentingSystem.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<ApplicationUser> builder)
         {
+            builder
+                .Property(p => p.IsActive)
+                .HasDefaultValue(true);
+
             builder.HasData(CreateUsers());
         }
 
