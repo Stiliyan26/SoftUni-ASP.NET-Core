@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "i4hM+VxiQ3F9zxK9A5G8PpqsAYn3N7Y3a5RcGvfW2Xtzk03izxEOi+dX7DmxtiAUiFeMtqQT8O++9Dsb85Tz4A==",
+  "success": true,
+  "projectFilePath": "C:\\GitHub\\Softuni-ASP.NET-Core\\SignalRDemo\\CoffeeDemo\\CoffeeDemo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Stili\\.nuget\\packages\\messagepack\\2.1.90\\messagepack.2.1.90.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\messagepack.annotations\\2.1.90\\messagepack.annotations.2.1.90.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\6.0.11\\microsoft.aspnetcore.connections.abstractions.6.0.11.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\microsoft.aspnetcore.signalr.common\\6.0.11\\microsoft.aspnetcore.signalr.common.6.0.11.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\microsoft.aspnetcore.signalr.protocols.messagepack\\6.0.11\\microsoft.aspnetcore.signalr.protocols.messagepack.6.0.11.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\microsoft.extensions.features\\6.0.11\\microsoft.extensions.features.6.0.11.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\system.reflection.emit\\4.6.0\\system.reflection.emit.4.6.0.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\system.reflection.emit.lightweight\\4.6.0\\system.reflection.emit.lightweight.4.6.0.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.3\\system.threading.tasks.extensions.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}
