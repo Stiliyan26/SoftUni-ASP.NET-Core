@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pmcBVQFcnFiQAdz3C9MdM3FT8e8Grc9u+CIJmX9EN3VKX9J5nBw9/Cec3DH0GO44VObzWVn9vOH6GPoOajO2FQ==",
+  "dgSpecHash": "rOYWBUdilfRhpcrXoAx0oOfzqy4VpsAxCVa1yXf+OqPHNkkpP3XxwX+K+zlcEKeLF8m5yka+cMlTAHKMFznF7Q==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\Softuni-ASP.NET-Core\\HouseRentingSysteм\\HouseRentingSysteм\\HouseRentingSysteм.csproj",
   "expectedPackageFiles": [
@@ -111,6 +111,7 @@
     "C:\\Users\\Stili\\.nuget\\packages\\microsoft.net.stringtools\\17.3.2\\microsoft.net.stringtools.17.3.2.nupkg.sha512",
     "C:\\Users\\Stili\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Stili\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Stili\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\Stili\\.nuget\\packages\\microsoft.visualstudio.debugger.contracts\\17.2.0\\microsoft.visualstudio.debugger.contracts.17.2.0.nupkg.sha512",
     "C:\\Users\\Stili\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\6.0.14\\microsoft.visualstudio.web.codegeneration.6.0.14.nupkg.sha512",
     "C:\\Users\\Stili\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\6.0.14\\microsoft.visualstudio.web.codegeneration.core.6.0.14.nupkg.sha512",
