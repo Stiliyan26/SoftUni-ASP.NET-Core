@@ -13,7 +13,7 @@ namespace HouseRentingSystem.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<House> builder)
         {
-            builder.HasData(CreateHouses());
+            //builder.HasData(CreateHouses());
         }
 
         private List<House> CreateHouses()
