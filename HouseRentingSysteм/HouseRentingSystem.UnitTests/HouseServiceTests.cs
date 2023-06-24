@@ -1,5 +1,6 @@
 ﻿using HouseRentingSystem.Core.Contracts;
 using HouseRentingSystem.Core.Exceptions;
+using HouseRentingSystem.Core.Models.House;
 using HouseRentingSystem.Core.Services;
 using HouseRentingSystem.Infrastructure.Data.Common;
 using HouseRentingSystem.Infrastructure.Data.Models;
@@ -37,6 +38,66 @@ namespace HouseRentingSystem.UnitTests
 
             applicationDbContext.Database.EnsureDeleted();
             applicationDbContext.Database.EnsureCreated();  
+        }
+
+        [Test]
+        public async Task TestHouseDelete()
+        {
+            Mock<ILogger<HouseService>> loggerMock = new Mock<ILogger<HouseService>>();
+            logger = loggerMock.Object;
+
+            var repo = new Repository(applicationDbContext);
+
+            houseService = new HouseService(repo, guard, logger);
+
+            await repo.AddAsync(new House()
+            {
+                Id = 1,
+                Address = "",
+                ImageUrl = "",
+                Title = "",
+                Description = ""
+            });
+
+            await houseService.Delete(1);
+
+            var removedHouse = await repo.GetByIdAsync<House>(1);
+
+            Assert.That(removedHouse.IsActive, Is.EqualTo(false));
+        }
+
+        [Test]
+        public async Task TestHouseEdit()
+        {
+            Mock<ILogger<HouseService>> loggerMock = new Mock<ILogger<HouseService>>();
+            logger = loggerMock.Object;
+
+            var repo = new Repository(applicationDbContext);
+
+            houseService = new HouseService(repo, guard, logger);
+
+            await repo.AddAsync(new House(){
+                Id = 1,
+                Address = "",
+                ImageUrl = "",
+                Title = "",
+                Description = ""
+            });
+
+            await repo.SaveChangesAsync();
+
+            await houseService.Edit(1, new HouseModel()
+            {
+                Id = 1,
+                Address = "",
+                ImageUrl = "",
+                Title = "",
+                Description = "This house is edited",
+            });
+
+            var dbHouse = await repo.GetByIdAsync<House>(1);
+
+            Assert.That(dbHouse.Description, Is.EqualTo("This house is edited"));
         }
 
         [Test]

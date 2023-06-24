@@ -6,7 +6,7 @@ using static HouseRentingSysteм.Areas.Admin.Constants.AdminConstants;
 namespace HouseRentingSysteм.Areas.Admin.Controllers
 {
     [Area(AreaName)]
-    [Route("Admin/[controller]/[Action]/{id?}")]
+    [Route("/Admin/[controller]/[Action]/{id?}")]
     [Authorize(Roles = AdminRoleName)]
     public class BaseController : Controller
     {

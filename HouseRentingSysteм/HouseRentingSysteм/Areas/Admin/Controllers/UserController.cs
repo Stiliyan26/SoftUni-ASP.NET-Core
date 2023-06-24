@@ -1,4 +1,5 @@
-﻿using HouseRentingSystem.Core.Contracts.Admin;
+﻿using HouseRentingSystem.Core.Constants;
+using HouseRentingSystem.Core.Contracts.Admin;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HouseRentingSysteм.Areas.Admin.Controllers
@@ -17,6 +18,23 @@ namespace HouseRentingSysteм.Areas.Admin.Controllers
             var model = await userService.All();
 
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Forget([FromBody] string userId)
+        {
+            bool result = await userService.Forget(userId);
+
+            if (result)
+            {
+                TempData[MessageConstants.SuccessMessage] = "User is now forgotten";
+            }
+            else
+            {
+                TempData[MessageConstants.ErrorMessage] = "User is unforgetable";
+            }
+
+            return RedirectToAction(nameof(All));
         }
     }
 }
