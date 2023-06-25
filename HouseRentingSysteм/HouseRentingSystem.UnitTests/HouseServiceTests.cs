@@ -8,11 +8,6 @@ using HouseRentingSysteм.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebShopDemo.Core.Data.Common;
 
 namespace HouseRentingSystem.UnitTests
