@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CxU/b2V/f++jBCVzTtmdi2jbDiMeKvAymF8n92JEdUua9M3CiYWjFaINYzpObXPBXbFAFYzJVdrBQM+0QetEHw==",
+  "dgSpecHash": "t1rAk0L75k3KTU3Y3HKETSQxqefDt4htdYpQjrOvzvodd/r2JbfjbwWy4mFDN07GTvFDmHeLZEOxQ8uhHenCDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Stili\\Downloads\\Homies_Skeleton\\Homies\\Homies.csproj",
+  "projectFilePath": "C:\\GitHub\\Softuni-ASP.NET-Core\\HomiesExam\\Homies\\Homies.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Stili\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Stili\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

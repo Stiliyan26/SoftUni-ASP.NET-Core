@@ -11193,11 +11193,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stili\\Downloads\\Homies_Skeleton\\Homies\\Homies.csproj",
+      "projectUniqueName": "C:\\GitHub\\Softuni-ASP.NET-Core\\HomiesExam\\Homies\\Homies.csproj",
       "projectName": "Homies",
-      "projectPath": "C:\\Users\\Stili\\Downloads\\Homies_Skeleton\\Homies\\Homies.csproj",
+      "projectPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\HomiesExam\\Homies\\Homies.csproj",
       "packagesPath": "C:\\Users\\Stili\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stili\\Downloads\\Homies_Skeleton\\Homies\\obj\\",
+      "outputPath": "C:\\GitHub\\Softuni-ASP.NET-Core\\HomiesExam\\Homies\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Stili\\AppData\\Roaming\\NuGet\\NuGet.Config",
