@@ -27,5 +27,9 @@ namespace HouseRentingSysteм.Infrastructure.Data
         public DbSet<Category> Categories { get; set; } = null!;
 
         public DbSet<Agent> Agents { get; set; } = null!;
-    }   
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+        }
+    }
 }
