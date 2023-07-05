@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using JwtWebApiTutorial.Services.UserService;
 
 namespace JwtWebApiTutorial.Controllers
 {
@@ -13,15 +14,30 @@ namespace JwtWebApiTutorial.Controllers
     public class AuthController : ControllerBase
     {
         public static User user = new User();
-        public IConfiguration _configuration;
+        public readonly IConfiguration _configuration;
+        private readonly IUserService _userService;
 
-        public AuthController(IConfiguration configuration)
+        public AuthController(IConfiguration configuration,
+            IUserService userService)
         {
             _configuration = configuration;
+            _userService = userService;
+        }
+
+        [HttpGet, Authorize]
+        public ActionResult<string> GetMe()
+        {
+            var username = _userService.GetMyName();
+            return Ok(username);
+
+            /*var username = User?.Identity?.Name;
+            var userName2 = User.FindFirstValue(ClaimTypes.Name);
+            var role = User.FindFirstValue(ClaimTypes.Role);  
+
+            return Ok(new {username, userName2, role});*/
         }
 
         [HttpPost("register")]
-
         public async Task<ActionResult<User>> Register(UserDto request)
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
@@ -34,7 +50,6 @@ namespace JwtWebApiTutorial.Controllers
         }
 
         [HttpPost("login")]
-
         public async Task<ActionResult<string>> Login(UserDto request)
         {
             if (user.Username != request.Username)
@@ -56,7 +71,7 @@ namespace JwtWebApiTutorial.Controllers
             List<Claim> claims = new List<Claim>()
             {
                 new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Role, "Noob")
+                new Claim(ClaimTypes.Role, "Admin")
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(
