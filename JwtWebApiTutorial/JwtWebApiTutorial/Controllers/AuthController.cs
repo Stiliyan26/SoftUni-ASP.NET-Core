@@ -24,7 +24,7 @@ namespace JwtWebApiTutorial.Controllers
             _userService = userService;
         }
 
-        [HttpGet, Authorize]
+        [HttpGet("GetMe"), Authorize]
         public ActionResult<string> GetMe()
         {
             var username = _userService.GetMyName();
