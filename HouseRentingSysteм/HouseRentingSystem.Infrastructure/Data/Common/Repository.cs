@@ -20,7 +20,7 @@ namespace HouseRentingSystem.Infrastructure.Data.Common
         /// </summary>
         protected DbContext Context { get; set; }
 
-        /// <summary>
+        /// <summary>   
         /// Representation of table in database
         /// </summary>
         protected DbSet<T> DbSet<T>() where T : class
